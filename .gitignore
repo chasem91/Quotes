@@ -37,3 +37,7 @@ xcuserdata/
 
 ## Swift Package Manager
 .build/
+
+Apollo/
+Alamofire/
+AlamofireImage/
