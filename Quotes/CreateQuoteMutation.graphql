@@ -1,0 +1,16 @@
+mutation CreateQuote($quote_data: QuoteData) {
+  create_quote(quote_data: $quote_data) {
+    id
+    content
+    date
+    poster_id
+    sayer {
+      ...SayerDetails
+    }
+    hearers {
+      ...HearerDetails
+    }
+    
+  }
+}
+

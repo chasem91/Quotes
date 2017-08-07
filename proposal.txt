@@ -1,0 +1,122 @@
+DATABASE:
+  PostgreSQL
+
+  users
+    attributes:
+      phone_number
+      first_name
+      last_name
+      password_digest
+      session_token
+    associations:
+      has_many: posted_quotes,
+        foreign_key: poster_id
+      has_many: said_quotes
+      has_many: hearings
+      has_many: heard_quotes, through: hearings
+  quotes
+    attributes:
+      content
+      sayer_id
+      poster_id
+    associations:
+      belongs_to: poster
+      has_many: hearings,
+        foreign_key: quote_id
+      has_many: hearers,
+        through: hearings
+  hearings
+    attributes:
+      quote_id
+      hearer_id
+    associations:
+      belongs_to: quote
+      belongs_to: hearer
+
+
+
+SERVER:
+  Node/Express/Apollo
+
+CLIENT SIDE FRAMEWORKS:
+  ReSwift
+  Apollo
+
+
+
+
+
+Hi guys,
+
+just wanted to send you a quick check-in about the project. As I said before,
+
+
+
+
+
+AppDelegate: UIResponder, UIApplicationDelegate
+  UIWindow
+    UITabBarController
+        UINavigationController
+          QuotesFeedController: UICollectionViewController, UICollectionViewDelegateFlowLayout
+        UINavigationController
+          QuoteProcessController: UICollectionViewController, UICollectionViewDelegateFlowLayout
+        UINavigationController
+          ProfileController: UICollectionViewController, UICollectionViewDelegateFlowLayout
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

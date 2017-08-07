@@ -1,0 +1,45 @@
+query User($id: ID!) {
+  user(id: $id) {
+    id
+    first_name
+    last_name
+    posted_quotes {
+      ...QuoteDetails
+    }
+    heard_quotes {
+      ...QuoteDetails
+    }
+    said_quotes {
+      ...QuoteDetails
+    }
+  }
+}
+
+fragment QuoteDetails on Quote {
+  id
+  content
+  date
+  sayer {
+    ...SayerDetails
+  }
+  hearers {
+    ...HearerDetails
+  }
+}
+
+fragment SayerDetails on User {
+  id
+  first_name
+  last_name
+  phone_number
+  profile_pic_url
+}
+
+fragment HearerDetails on User {
+  id
+  first_name
+  last_name
+  phone_number
+  profile_pic_url
+}
+
